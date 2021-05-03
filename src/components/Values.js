@@ -1,65 +1,18 @@
 import React from 'react'
+// import '../styles/Values.css'
 
-function Values (props) {
-    return (
-      <form>
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-        <label htmlFor='1'>1</label>
-        <input type='button'
-               name='1'
-               />
-
-
-        <div className='values'>      
-            <button>1</button>      
-            <button>2</button>      
-            <button>3</button>      
-            <button>4</button>      
-            <button>5</button>      
-            <button>6</button>      
-            <button>7</button>      
-            <button>8</button>      
-            <button>9</button>      
-            <button id='zero'>0</button>      
-            <button>.</button>      
-          </div>
-      </form>
+const Values = () => {
+       const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.','=']
+       const valueMap = values.map((value,i) => {
+              return  <button key={i}>{value}</button>
+              
+       })
+       return (
+              <div className='values'>      
+                     {valueMap}
+              </div>
     )
 }
- export default Values
+
+export default Values
 

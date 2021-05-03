@@ -1,10 +1,11 @@
 import React from 'react';
+// import '../styles/Results.css';
 
-const Results = () => {
+const Results = (props) => {
     return (
-        <ul className='result-list'>
-             
-        </ul>
+        <>
+            <div className='results'>{props.input}</div>
+        </>
     )
 }
 

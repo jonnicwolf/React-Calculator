@@ -1,9 +1,15 @@
 import React from 'react'
+// import '../styles/Operators.css'
 
-export default Operators = () => {
+const Operators = () => {
     return (
-        <div>
-            {/* DMAS */}
-        </div>
+            <div className='operators'>
+                <button>÷</button>
+                <button>x</button>
+                <button>-</button>
+                <button>+</button>
+            </div>
     )
 }
+
+export default Operators;
