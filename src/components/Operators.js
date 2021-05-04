@@ -1,5 +1,5 @@
 import React from 'react'
-// import '../styles/Operators.css'
+import '../styles/Operators.css'
 
 const Operators = () => {
     return (

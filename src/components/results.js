@@ -1,11 +1,11 @@
 import React from 'react';
-// import '../styles/Results.css';
+import '../styles/Results.css';
 
 const Results = (props) => {
     return (
-        <>
-            <div className='results'>{props.input}</div>
-        </>
+        <div className='results'>
+           <div>results go brrr</div> 
+        </div>
     )
 }
 

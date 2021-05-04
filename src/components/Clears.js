@@ -1,5 +1,5 @@
 import React from 'react'
-// import '../styles/Clears.css'
+import '../styles/Clears.css'
 
 export default function Clears() {
     return (
