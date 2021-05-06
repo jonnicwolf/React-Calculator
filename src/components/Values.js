@@ -1,20 +1,21 @@
-import React from 'react'
-import '../styles/Values.css'
+import React from "react";
+import "../styles/Values.css";
 
-const Values = () => {
-       const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.','=']
-       const valueMap = values.map((value, i) => {
-              return <button
-                     key={i}
-                     onClick={() => {return value} }>{value}</button>
-              
-       })
-       return (
-              <div className='values'>      
-                     {valueMap}
-              </div>
-    )
+export default function Values(props) {
+  const { onNumberClick } = props
+  const values = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, ".", "=", "÷", "x", "-", "+"];
+  const valueMap = values.map((value, i) => {
+    return (
+      <button
+        key={i}
+        onClick={() => onNumberClick(value)}
+      >
+        {value}
+      </button>
+    );
+  });
+  const isOperator = (val) => {
+    return !isNaN(val) || val === "." || val === "=";
+  };
+  return <div className="values">{valueMap}</div>;
 }
-
-export default Values;
-
