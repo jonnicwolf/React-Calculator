@@ -14,15 +14,12 @@ class App extends Component {
   }
 
   onNumberClick = (val) => {
+    if (val === 'x') {
+      val = "*"
+    }
     this.setState(() => ({
       input: this.state.input + val,
     }));
-  };
-  
-  results = (operation) => {
-    this.setState(() => ({
-      output: this.state.output
-    }))
   };
 
   rand = (max, min) => {
@@ -31,6 +28,7 @@ class App extends Component {
 
   render() {
     const { input, output } = this.state;
+
     return (
       <div className="calculator">
         {/* create a new state val, what type it hsould be, pass it down to results. set click events to update the state */}
@@ -38,7 +36,8 @@ class App extends Component {
         <Values onNumberClick={this.onNumberClick} />
         <Results
           input={input}
-          atTimesSumDifferencesDoDivideUs={ output }/>
+          atTimesSumDifferencesDoDivideUs={output} />
+        
       </div>
     );
   }
