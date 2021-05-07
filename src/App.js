@@ -1,38 +1,44 @@
 import "./App.css";
-import Results from "./components/Results";
-import Values from "./components/Values";
-import Operators from "./components/Operators";
-import Clears from "./components/Clears";
 import { Component } from "react";
+import Values from "./components/Values";
+import Results from "./components/Results";
+import Clears from "./components/Clears";
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      input: [],
+      input: "",
+      output: "",
     };
   }
 
   onNumberClick = (val) => {
-    this.setState((prevState) => ({
-      input: [...prevState.input, val],
+    this.setState(() => ({
+      input: this.state.input + val,
     }));
+  };
+  
+  results = (operation) => {
+    this.setState(() => ({
+      output: this.state.output
+    }))
   };
 
   rand = (max, min) => {
     return Math.floor(Math.random() * (max - min) + min);
   };
 
-  
   render() {
-    console.log(this.state.input);
-    const { input } = this.state;
+    const { input, output } = this.state;
     return (
       <div className="calculator">
         {/* create a new state val, what type it hsould be, pass it down to results. set click events to update the state */}
         <Clears />
         <Values onNumberClick={this.onNumberClick} />
-        <Results input={input}/>
+        <Results
+          input={input}
+          atTimesSumDifferencesDoDivideUs={ output }/>
       </div>
     );
   }
