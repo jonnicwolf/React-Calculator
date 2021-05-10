@@ -14,18 +14,14 @@ class App extends Component {
   }
 
   onNumberClick = (val) => {
-    if (val === 'x') {
-      val = "*"
+    if (val === "x") {
+      val = "*";
     }
     this.setState(() => ({
       input: this.state.input + val,
     }));
   };
-
-  rand = (max, min) => {
-    return Math.floor(Math.random() * (max - min) + min);
-  };
-
+  
   render() {
     const { input, output } = this.state;
 
@@ -34,10 +30,7 @@ class App extends Component {
         {/* create a new state val, what type it hsould be, pass it down to results. set click events to update the state */}
         <Clears />
         <Values onNumberClick={this.onNumberClick} />
-        <Results
-          input={input}
-          atTimesSumDifferencesDoDivideUs={output} />
-        
+        <Results input={input} atTimesSumDifferencesDoDivideUs={output} />
       </div>
     );
   }
