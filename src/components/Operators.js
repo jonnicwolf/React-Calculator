@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/Operators.css";
 
 const Operators = () => {
+  // Since you didn't use this component, you should probably remove it!
 //   const isOperator = (val) => {
 //     return isNaN(val) || val === "." || val === "="
 //   };
